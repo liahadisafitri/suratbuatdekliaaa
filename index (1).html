@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Buat Dek Lia 💗</title>
+  <meta name="theme-color" content="#ffd6e4" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Latar lembut -->
+  <div class="aurora" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i></div>
+  <div class="stars" id="stars" aria-hidden="true"></div>
+  <div class="bg" id="bg" aria-hidden="true"></div>
+  <canvas id="fx" aria-hidden="true"></canvas>
+
+  <!-- Pemutar musik -->
+  <div class="player" id="player">
+    <button class="music-btn" id="musicBtn" aria-label="Putar musik" title="Putar / jeda musik">▶</button>
+    <div class="song" id="songText">♪ Semenjak Ada Dirimu · Yovie Widianto &amp; HIVI!</div>
+    <button class="vid-btn" id="vidBtn" aria-label="Tampilkan video" aria-pressed="false" title="Tampilkan / sembunyikan video">🎬</button>
+  </div>
+
+  <!-- Video YouTube resmi (lagu) -->
+  <div class="ytpanel off" id="ytPanel">
+    <div id="ytPlayer"></div>
+  </div>
+
+  <!-- Cadangan: file lokal jika ada -->
+  <audio id="bgm" src="semenjak-ada-dirimu.mp3" loop preload="none"></audio>
+  <div class="toast" id="toast" role="status"></div>
+
+  <main class="stage">
+    <!-- Halaman 1 -->
+    <section class="card" id="intro">
+      <div class="sparkle s1">✨</div>
+      <div class="sparkle s2">🌸</div>
+      <div class="sparkle s3">💫</div>
+      <h1 class="script split">Haii, Adee Liaa sayangkuuu! 💗</h1>
+      <p class="sub">Mass mau nanya sesuatuu nihh, jawab jujurr yaa sayanggg 🥹❤️</p>
+      <h2 class="question">Kamu sayang Mamas nggak?</h2>
+      <div class="btn-row" id="btnRow">
+        <button class="btn btn-yes" id="yesBtn">Sayang Bangettt! ❤️</button>
+        <button class="btn btn-no" id="noBtn">Nggak 😝</button>
+      </div>
+      <p class="hint" id="hint"></p>
+    </section>
+
+    <!-- Halaman 2 -->
+    <section class="card hidden" id="yes">
+      <div class="heart-wrap"><span class="ring r1"></span><div class="big-heart">💗</div></div>
+      <h1 class="script" id="yesTitle">AWWW, ADEE LIAA SAYANG MASSS! 😭💗 Muachhh!</h1>
+      <button class="btn btn-yes" id="letterBtn">Ada surat kecil buat adee 💌</button>
+    </section>
+  </main>
+
+  <!-- Amplop & surat -->
+  <div class="overlay hidden" id="overlay" role="dialog" aria-modal="true" aria-label="Surat cinta">
+    <div class="envelope-wrap" id="envWrap">
+      <div class="envelope" id="envelope">
+        <div class="env-glow"></div>
+        <div class="env-back"></div>
+        <div class="env-paper"></div>
+        <div class="env-front"></div>
+        <div class="env-flap"></div>
+        <div class="env-seal">💗</div>
+      </div>
+      <p class="env-tip">Ketuk amplopnya, sayang 💌</p>
+    </div>
+
+    <article class="letter hidden" id="letter">
+      <div class="letter-scroll" id="letterBody"></div>
+      <div class="letter-actions">
+        <button class="btn btn-small" id="skipBtn">Tampilkan semua ⏩</button>
+        <button class="btn btn-small btn-yes" id="closeBtn">Tutup surat ✖</button>
+      </div>
+    </article>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
